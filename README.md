@@ -12,7 +12,7 @@ The module creates sns topic and subscription, and targets the subscriptions to 
 
 ## Examples
 
-* [Simple Example](examples/default/main.tf)
+* [Simple Example](example/default/main.tf)
 
 
 ## Authors
