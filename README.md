@@ -1,6 +1,6 @@
 # Sns events to slack
 
-[![Build Status](https://travis-ci.com/telia-oss/terraform-module-template.svg?branch=master)](https://travis-ci.com/telia-oss/terraform-module-template)
+[![Build Status](https://travis-ci.org/telia-oss/terraform-aws-lambda-slack.svg?branch=master)](https://travis-ci.org/telia-oss/terraform-aws-lambda-slack)
 ![](https://img.shields.io/maintenance/yes/2018.svg)
 
 This module lets you send sns events to slck.
