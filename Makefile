@@ -1,10 +1,12 @@
+OS=darwin
+DIR=$(shell pwd)
 
 default: test
 
 test:
 	@echo "== Test =="
 	@if ! terraform fmt -write=false -check=true >> /dev/null; then \
-		echo "✗ terraform fmt failed: $$d"; \
+		echo "✗ terraform fmt (Some files need to be formatted, run 'terraform fmt' to fix.)"; \
 		exit 1; \
 	else \
 		echo "√ terraform fmt"; \
@@ -18,7 +20,7 @@ test:
 			echo "✗ terraform validate failed: $$d"; \
 			exit 1; \
 		fi; \
-		cd $(CURDIR); \
+		cd $(DIR); \
 	done
 	@echo "√ terraform validate modules (not including variables)"; \
 
@@ -30,7 +32,7 @@ test:
 			echo "✗ terraform validate failed: $$d"; \
 			exit 1; \
 		fi; \
-		cd $(CURDIR); \
+		cd $(DIR); \
 	done
 	@echo "√ terraform validate examples"; \
 
