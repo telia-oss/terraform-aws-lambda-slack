@@ -1,4 +1,3 @@
-
 variable "name_prefix" {
   description = "A prefix that will be added to resources so that they are unique."
 }
@@ -38,7 +37,6 @@ variable "slack_hook" {
 variable "username" {
   description = "Slack username."
   default     = "AWS-bot"
-  
 }
 
 variable "icon" {

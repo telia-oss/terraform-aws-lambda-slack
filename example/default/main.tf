@@ -1,6 +1,6 @@
 module "lambda-slack" {
-  source           = "../.."
-  
+  source = "../.."
+
   topic_name = "lambda-to-slack"
 
   lambda_s3_bucket = "s3-bucket-name"
@@ -10,5 +10,4 @@ module "lambda-slack" {
   handler = "main"
 
   slack_hook = "https://hooks.slack.com/services/Secret"
-
 }

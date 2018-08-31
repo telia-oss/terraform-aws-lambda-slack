@@ -15,22 +15,22 @@ resource "aws_lambda_function" "notify_slack" {
   environment {
     variables = {
       SLACK_HOOK = "${var.slack_hook}"
-      USERNAME = "${var.username}"
-      ICON = "${var.icon}"
+      USERNAME   = "${var.username}"
+      ICON       = "${var.icon}"
     }
   }
 }
 
 resource "aws_lambda_permission" "allow_sns" {
-  statement_id = "AllowExecutionFromSNS"
-  action = "lambda:invokeFunction"
+  statement_id  = "AllowExecutionFromSNS"
+  action        = "lambda:invokeFunction"
   function_name = "${aws_lambda_function.notify_slack.arn}"
-  principal = "sns.amazonaws.com"
-  source_arn = "${aws_sns_topic.alarm_topic.arn}"
+  principal     = "sns.amazonaws.com"
+  source_arn    = "${aws_sns_topic.alarm_topic.arn}"
 }
 
 resource "aws_sns_topic_subscription" "lambda_sns" {
   topic_arn = "${aws_sns_topic.alarm_topic.arn}"
-  protocol = "lambda"
-  endpoint = "${aws_lambda_function.notify_slack.arn}"
+  protocol  = "lambda"
+  endpoint  = "${aws_lambda_function.notify_slack.arn}"
 }
