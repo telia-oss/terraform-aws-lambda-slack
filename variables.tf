@@ -23,11 +23,12 @@ variable "memory_size" {
 
 variable "lambda_s3_bucket" {
   description = "The bucket where the lambda function is uploaded."
+  default = "telia-oss"
 }
 
 variable "s3_key" {
   description = "The s3 key for the Lambda artifact."
-  default     = "aws-notify-slack.zip"
+  default     = "aws-notify-slack/main.zip"
 }
 
 variable "slack_hook" {
