@@ -23,7 +23,7 @@ variable "memory_size" {
 
 variable "lambda_s3_bucket" {
   description = "The bucket where the lambda function is uploaded."
-  default = "telia-oss"
+  default     = "telia-oss"
 }
 
 variable "s3_key" {
