@@ -1,4 +1,4 @@
-# Sns events to slack
+# SNS events to slack
 
 [![Build Status](https://travis-ci.org/telia-oss/terraform-aws-lambda-slack.svg?branch=master)](https://travis-ci.org/telia-oss/terraform-aws-lambda-slack)
 ![](https://img.shields.io/maintenance/yes/2018.svg)
@@ -12,7 +12,7 @@ The module creates sns topic and subscription, and targets the subscriptions to 
 
 ## Examples
 
-* [Simple Example](examples/default/example.tf)
+* [Simple Example](example/default/main.tf)
 
 
 ## Authors
