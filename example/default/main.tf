@@ -5,7 +5,7 @@ module "lambda-slack" {
 
   name_prefix = "name-prefix"
 
-  handler = "main"
+  handler = "bin/main"
 
   slack_hook = "https://hooks.slack.com/services/Secret"
 }
