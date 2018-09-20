@@ -14,6 +14,10 @@ The module creates sns topic and subscription, and targets the subscriptions to 
 
 * [Simple Example](example/default/main.tf)
 
+## Cloudwatch alarms
+
+[The Terraform module to create cloudwatch alarm](https://github.com/telia-oss/terraform-aws-cloudwatch-alarm)
+
 
 ## Authors
 
