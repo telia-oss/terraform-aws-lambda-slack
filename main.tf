@@ -1,11 +1,19 @@
+resource "random_string" "lambda_postfix_generator" {
+  length  = 16
+  upper   = true
+  lower   = true
+  number  = true
+  special = false
+}
+
 resource "aws_sns_topic" "alarm_topic" {
-  name = "${var.topic_name}"
+  name = "${var.topic_name}-${random_string.lambda_postfix_generator.result}"
 }
 
 resource "aws_lambda_function" "notify_slack" {
   s3_bucket     = "${var.lambda_s3_bucket}"
   s3_key        = "${var.s3_key}"
-  function_name = "${var.name_prefix}-slack-notify"
+  function_name = "${var.name_prefix}-slack-notify-${random_string.lambda_postfix_generator.result}"
   handler       = "${var.handler}"
   runtime       = "go1.x"
   timeout       = "${var.timeout}"
