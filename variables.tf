@@ -8,7 +8,7 @@ variable "topic_name" {
 
 variable "random_postfix" {
   description = "Boolean for adding a random string to the end of the iam role, iam policy, topic and function names"
-  default = "false"
+  default     = "false"
 }
 
 variable "handler" {
