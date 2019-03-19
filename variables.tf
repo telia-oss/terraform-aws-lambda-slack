@@ -6,6 +6,11 @@ variable "topic_name" {
   description = "A prefix that will be added to resources so that they are unique."
 }
 
+variable "random_postfix" {
+  description = "Boolean for adding a random string to the end of the iam role, iam policy, topic and function names"
+  default = "false"
+}
+
 variable "handler" {
   description = "The function entrypoint in the code."
   default     = "main"
