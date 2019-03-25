@@ -5,7 +5,7 @@ module "lambda-slack" {
 
   name_prefix = "name-prefix"
 
-  random_postfix = "true"
+  has_random_postfix = false
 
   handler = "bin/main"
 

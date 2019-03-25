@@ -7,13 +7,13 @@ resource "random_string" "lambda_postfix_generator" {
 }
 
 resource "aws_sns_topic" "alarm_topic" {
-  name = "${var.topic_name}${var.random_postfix == "true" ? "-${random_string.lambda_postfix_generator.result}" : ""}"
+  name = "${var.topic_name}${var.has_random_postfix ? "-${random_string.lambda_postfix_generator.result}" : ""}"
 }
 
 resource "aws_lambda_function" "notify_slack" {
   s3_bucket     = "${var.lambda_s3_bucket}"
   s3_key        = "${var.s3_key}"
-  function_name = "${var.name_prefix}-slack-notify${var.random_postfix == "true" ? "-${random_string.lambda_postfix_generator.result}" : ""}"
+  function_name = "${var.name_prefix}-slack-notify${var.has_random_postfix ? "-${random_string.lambda_postfix_generator.result}" : ""}"
   handler       = "${var.handler}"
   runtime       = "go1.x"
   timeout       = "${var.timeout}"
