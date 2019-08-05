@@ -7,7 +7,7 @@ module "lambda-slack" {
 
   has_random_postfix = false
 
-  handler = "bin/main"
+  handler = "main"
 
   slack_hook = "https://hooks.slack.com/services/Secret"
 }
