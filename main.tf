@@ -27,6 +27,11 @@ resource "aws_lambda_function" "notify_slack" {
       ICON       = var.icon
     }
   }
+
+  vpc_config {
+    subnet_ids         = var.subnet_ids
+    security_group_ids = var.security_group_ids
+  }
 }
 
 resource "aws_lambda_permission" "allow_sns" {
