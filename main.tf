@@ -2,7 +2,7 @@ resource "random_string" "lambda_postfix_generator" {
   length  = 16
   upper   = true
   lower   = true
-  number  = true
+  numeric = true
   special = false
 }
 
